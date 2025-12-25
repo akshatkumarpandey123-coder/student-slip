@@ -1,60 +1,77 @@
 body {
-    background: #f2f2f2;
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
+    background: #f2f2f2;
 }
 
+/* DEFAULT (DESKTOP / PRINT) */
 .slip {
-    max-width: 800px;
-    width: 90%;
+    max-width: 900px;
     margin: 20px auto;
     background: white;
     padding: 20px;
     border: 2px solid black;
+    box-sizing: border-box;
 }
 
+/* HEADER */
 .header {
     text-align: center;
 }
 
 .header img {
-    width: 80px;
+    width: 110px;
     height: auto;
 }
 
 .header h2 {
-    margin: 8px 0;
-    border-bottom: 1px solid black;
-    padding-bottom: 5px;
+    margin: 10px 0;
+    border-bottom: 2px solid black;
+    padding-bottom: 6px;
 }
 
+/* TEXT */
 p {
-    font-size: 14px;
-    margin: 6px 0;
-}
-
-.datetime {
-    font-size: 13px;
+    font-size: 16px;
+    margin: 8px 0;
 }
 
 .footer {
     text-align: center;
-    font-size: 12px;
-    margin-top: 10px;
+    font-size: 13px;
+    margin-top: 15px;
 }
 
 .print-btn {
-    margin-top: 10px;
+    margin-top: 15px;
     width: 100%;
-    padding: 8px;
-    font-size: 14px;
-    cursor: pointer;
+    padding: 10px;
+    font-size: 15px;
 }
 
-/* ===== PRINT MODE ===== */
+/* 📱 MOBILE VIEW — FULL WIDTH */
+@media screen and (max-width: 768px) {
+
+    body {
+        background: white;
+    }
+
+    .slip {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        border-left: none;
+        border-right: none;
+        border-radius: 0;
+    }
+}
+
+/* 🖨️ PRINT VIEW */
 @media print {
 
     body {
-        background: none;
+        background: white;
     }
 
     .print-btn {
@@ -62,9 +79,9 @@ p {
     }
 
     .slip {
-        border: 2px solid black;
-        margin: 0;
         width: 100%;
+        max-width: 100%;
+        margin: 0;
+        border: 2px solid black;
     }
-
 }
