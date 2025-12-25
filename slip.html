@@ -44,24 +44,28 @@
 </div>
 
 <script>
+    // Read URL parameters
     const params = new URLSearchParams(window.location.search);
 
-    document.getElementById("adm").innerText = params.get("adm");
-    document.getElementById("name").innerText = params.get("name");
-    document.getElementById("father").innerText = params.get("father");
-    document.getElementById("class").innerText = params.get("class");
-    document.getElementById("fees").innerText = params.get("fees");
-    document.getElementById("room").innerText = params.get("room");
-    document.getElementById("serial").innerText = params.get("serial");
+    function set(id, value) {
+        document.getElementById(id).innerText =
+            value ? decodeURIComponent(value) : "N/A";
+    }
 
-    // Date & Time
-    const now = new Date();
-    document.getElementById("date").innerText = now.toLocaleDateString();
-    document.getElementById("time").innerText = now.toLocaleTimeString();
+    set("reg", params.get("reg"));
+    set("name", params.get("name"));
+    set("father", params.get("father"));
+    set("mother", params.get("mother"));
+    set("dob", params.get("dob"));
+    set("class", params.get("class"));
+    set("fees", params.get("fees"));
+    set("room", params.get("room"));
+    set("serial", params.get("serial"));
+    set("time", params.get("time"));
 </script>
-
 </body>
 
 </html>
+
 
 
