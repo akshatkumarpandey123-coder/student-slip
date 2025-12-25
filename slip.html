@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Verification Slip</title>
+
+    <!-- KEEP YOUR EXISTING CSS -->
     <link rel="stylesheet" href="style.css?v=4">
 </head>
+
 <body>
 
 <div class="slip">
 
-    <!-- HEADER WITH LOGO -->
+    <!-- HEADER -->
     <div class="header">
         <img src="logo.png" alt="School Logo">
         <h2>STUDENT VERIFICATION SLIP</h2>
     </div>
 
     <!-- STUDENT DETAILS -->
-    <p><b>Admission No:</b> <span id="adm"></span></p>
+    <p><b>Registration No:</b> <span id="reg"></span></p>
     <p><b>Name:</b> <span id="name"></span></p>
     <p><b>Father’s Name:</b> <span id="father"></span></p>
-    <p><b>Class:</b> <span id="class"></span></p>
+    <p><b>Mother’s Name:</b> <span id="mother"></span></p>
+    <p><b>Date of Birth:</b> <span id="dob"></span></p>
+    <p><b>Class:</b> <span id="cls"></span></p>
     <p><b>Fees Status:</b> <span id="fees"></span></p>
     <p><b>Room No:</b> <span id="room"></span></p>
     <p><b>Serial No:</b> <span id="serial"></span></p>
@@ -27,8 +33,7 @@
     <!-- DATE & TIME -->
     <hr>
     <p class="datetime">
-        <b>Date:</b> <span id="date"></span><br>
-        <b>Time:</b> <span id="time"></span>
+        <b>Interaction Time:</b> <span id="time"></span>
     </p>
 
     <!-- FOOTER -->
@@ -43,29 +48,31 @@
 
 </div>
 
+<!-- ================= SCRIPT (VERY IMPORTANT) ================= -->
 <script>
-    // Read URL parameters
     const params = new URLSearchParams(window.location.search);
 
-    function set(id, value) {
-        document.getElementById(id).innerText =
-            value ? decodeURIComponent(value) : "N/A";
+    function set(id, key) {
+        const el = document.getElementById(id);
+        if (el) {
+            el.innerText = params.get(key)
+                ? decodeURIComponent(params.get(key))
+                : "N/A";
+        }
     }
 
-    set("reg", params.get("reg"));
-    set("name", params.get("name"));
-    set("father", params.get("father"));
-    set("mother", params.get("mother"));
-    set("dob", params.get("dob"));
-    set("class", params.get("class"));
-    set("fees", params.get("fees"));
-    set("room", params.get("room"));
-    set("serial", params.get("serial"));
-    set("time", params.get("time"));
+    set("reg", "reg");
+    set("name", "name");
+    set("father", "father");
+    set("mother", "mother");
+    set("dob", "dob");
+    set("cls", "class");
+    set("fees", "fees");
+    set("room", "room");
+    set("serial", "serial");
+    set("time", "time");
 </script>
+
 </body>
-
 </html>
-
-
 
