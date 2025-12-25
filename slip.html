@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Verification Slip</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="slip">
+
+    <!-- HEADER WITH LOGO -->
+    <div class="header">
+        <img src="logo.png" alt="School Logo">
+        <h2>STUDENT VERIFICATION SLIP</h2>
+    </div>
+
+    <!-- STUDENT DETAILS -->
+    <p><b>Admission No:</b> <span id="adm"></span></p>
+    <p><b>Name:</b> <span id="name"></span></p>
+    <p><b>Father’s Name:</b> <span id="father"></span></p>
+    <p><b>Class:</b> <span id="class"></span></p>
+    <p><b>Fees Status:</b> <span id="fees"></span></p>
+    <p><b>Room No:</b> <span id="room"></span></p>
+    <p><b>Serial No:</b> <span id="serial"></span></p>
+
+    <!-- DATE & TIME -->
+    <hr>
+    <p class="datetime">
+        <b>Date:</b> <span id="date"></span><br>
+        <b>Time:</b> <span id="time"></span>
+    </p>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        Verified using Offline Student Verification System
+    </div>
+
+    <!-- PRINT BUTTON -->
+    <button onclick="window.print()" class="print-btn">
+        Print Slip
+    </button>
+
+</div>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+
+    document.getElementById("adm").innerText = params.get("adm");
+    document.getElementById("name").innerText = params.get("name");
+    document.getElementById("father").innerText = params.get("father");
+    document.getElementById("class").innerText = params.get("class");
+    document.getElementById("fees").innerText = params.get("fees");
+    document.getElementById("room").innerText = params.get("room");
+    document.getElementById("serial").innerText = params.get("serial");
+
+    // Date & Time
+    const now = new Date();
+    document.getElementById("date").innerText = now.toLocaleDateString();
+    document.getElementById("time").innerText = now.toLocaleTimeString();
+</script>
+
+</body>
+</html>

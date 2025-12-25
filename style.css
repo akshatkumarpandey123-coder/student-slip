@@ -1,0 +1,68 @@
+body {
+    background: #f2f2f2;
+    font-family: Arial, sans-serif;
+}
+
+.slip {
+    width: 320px;
+    margin: 30px auto;
+    background: white;
+    padding: 15px;
+    border: 2px solid black;
+}
+
+.header {
+    text-align: center;
+}
+
+.header img {
+    width: 80px;
+    height: auto;
+}
+
+.header h2 {
+    margin: 8px 0;
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+}
+
+p {
+    font-size: 14px;
+    margin: 6px 0;
+}
+
+.datetime {
+    font-size: 13px;
+}
+
+.footer {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.print-btn {
+    margin-top: 10px;
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* ===== PRINT MODE ===== */
+@media print {
+
+    body {
+        background: none;
+    }
+
+    .print-btn {
+        display: none;
+    }
+
+    .slip {
+        border: 2px solid black;
+        margin: 0;
+        width: 100%;
+    }
+}
